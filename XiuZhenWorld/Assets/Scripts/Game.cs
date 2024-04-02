@@ -14,5 +14,6 @@ public class Game : Architecture<Game>
     protected override void Init()
     {
         Debug.Log("Init");
+        RegisterModel(new MartialArtModel());
     }
 }
