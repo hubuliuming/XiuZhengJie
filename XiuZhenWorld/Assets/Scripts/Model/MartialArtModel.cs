@@ -8,7 +8,7 @@
 
 using System.Collections.Generic;
 using UnityEngine;
-using YFramework;
+using QFramework;
 
 public class MartialArtModel : AbstractModel
 {
@@ -25,7 +25,6 @@ public class MartialArtModel : AbstractModel
         Debug.Log("创造功法初始化");
 
         columAritDic = new Dictionary<int, AcupunctureData[]>();
-
         var columArtDatas = new AcupunctureData[8];
         columArtDatas[0].Name = "胞中";
         columArtDatas[1].Name = "神阙";
