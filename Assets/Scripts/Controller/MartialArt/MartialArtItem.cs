@@ -10,27 +10,59 @@ using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using QFramework;
+using YFramework.UI;
 
-public class MartialArtItem : MonoBehaviour,IController,IPointerClickHandler
+namespace MartialArt
 {
-    private int _id;
-    private string _name;
-
-
-    public void Init(int id)
+    public class MartialArtItem : MonoBehaviour,IPointerClickHandler,ICanSendEvent
     {
-        _id = id;
-        this.RegisterEvent<int>((i => Debug.Log(i)));
-        
-    }
+        private ItemClickEvent _event;
+        private ItemData _data;
+        private bool _select;
 
-    public void OnPointerClick(PointerEventData eventData)
-    {
-        
-    }
+        public bool Select
+        {
+            get => _select;
+            private set
+            {
+                _select = value;
+                _circleImage.color = _select ? _selectColor : _normalColor;
+            }
+        }
 
-    public IArchitecture GetArchitecture()
-    {
-        return Game.Interface;
+        private Color _selectColor = Color.green;
+        private Color _normalColor = Color.grey;
+
+        private CircleImage _circleImage;
+    
+    
+        public void Init(int id)
+        {
+            _event = new ItemClickEvent();
+            _data = new ItemData();
+            _data.id = id;
+            _data.pos = transform.position;
+            _select = false;
+            _circleImage = GetComponent<CircleImage>();
+            _circleImage.color = _normalColor;
+        }
+
+        public void OnPointerClick(PointerEventData eventData)
+        {
+            Select = !Select;
+            _data.select = Select;
+            _event.data = _data;
+            this.SendEvent(_event);
+        }
+
+        public void OnReset()
+        {
+            Select = false;
+        }
+
+        public IArchitecture GetArchitecture()
+        {
+            return Game.Interface;
+        }
     }
 }
