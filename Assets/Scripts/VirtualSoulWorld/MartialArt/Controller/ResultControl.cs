@@ -1,4 +1,4 @@
-using UnityEngine;
+using Game;
 using QFramework;
 
 namespace MartialArt
@@ -23,7 +23,7 @@ namespace MartialArt
 
 		public IArchitecture GetArchitecture()
 		{
-			return Game.Interface;
+			return VirtualSoulWorld.Interface;
 		}
 	}
 }

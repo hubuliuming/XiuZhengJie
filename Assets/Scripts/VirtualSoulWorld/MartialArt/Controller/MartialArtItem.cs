@@ -7,6 +7,7 @@
 *****************************************************/
 
 using System;
+using Game;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using QFramework;
@@ -62,7 +63,7 @@ namespace MartialArt
 
         public IArchitecture GetArchitecture()
         {
-            return Game.Interface;
+            return VirtualSoulWorld.Interface;
         }
     }
 }

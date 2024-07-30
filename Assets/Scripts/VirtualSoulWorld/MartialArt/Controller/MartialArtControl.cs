@@ -9,6 +9,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Game;
 using UnityEngine;
 using UnityEngine.UI;
 using QFramework;
@@ -127,7 +128,7 @@ namespace MartialArt
     
         public IArchitecture GetArchitecture()
         {
-            return Game.Interface;
+            return VirtualSoulWorld.Interface;
         }
     }
 
