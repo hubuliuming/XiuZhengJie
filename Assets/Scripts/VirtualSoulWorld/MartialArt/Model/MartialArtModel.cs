@@ -10,9 +10,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using QFramework;
 
+/// <summary>
+/// 创造功法的Model
+/// </summary>
 public class MartialArtModel : AbstractModel
 {
-    public Dictionary<int, AcupunctureData[]> columAritDic;
+    public Dictionary<int, AcupunctureInfo[]> columAritDic;
     // public AcupunctureData[] columArtDatas;
     // public AcupunctureData[] colum1ArtDatas;
     // public AcupunctureData[] colum2ArtDatas;
@@ -24,8 +27,8 @@ public class MartialArtModel : AbstractModel
     {
         Debug.Log("创造功法初始化");
 
-        columAritDic = new Dictionary<int, AcupunctureData[]>();
-        var columArtDatas = new AcupunctureData[8];
+        columAritDic = new Dictionary<int, AcupunctureInfo[]>();
+        var columArtDatas = new AcupunctureInfo[8];
         columArtDatas[0].Name = "胞中";
         columArtDatas[1].Name = "神阙";
         columArtDatas[2].Name = "巨阙";
@@ -36,7 +39,7 @@ public class MartialArtModel : AbstractModel
         columArtDatas[7].Name = "廉泉";
         columAritDic.Add(0,columArtDatas);
 
-        var colum1ArtDatas = new AcupunctureData[9];
+        var colum1ArtDatas = new AcupunctureInfo[9];
         colum1ArtDatas[0].Name = "阴都";
         colum1ArtDatas[1].Name = "横骨";
         colum1ArtDatas[2].Name = "期门";
@@ -48,7 +51,7 @@ public class MartialArtModel : AbstractModel
         colum1ArtDatas[8].Name = "带脉";
         columAritDic.Add(1,colum1ArtDatas);
         
-        var colum2ArtDatas = new AcupunctureData[8];
+        var colum2ArtDatas = new AcupunctureInfo[8];
         colum2ArtDatas[0].Name = "通谷";
         colum2ArtDatas[1].Name = "长强";
         colum2ArtDatas[2].Name = "阳关";
@@ -59,7 +62,7 @@ public class MartialArtModel : AbstractModel
         colum2ArtDatas[7].Name = "哑门";
         columAritDic.Add(2,colum2ArtDatas);
         
-        var colum3ArtDatas = new AcupunctureData[9];
+        var colum3ArtDatas = new AcupunctureInfo[9];
         colum3ArtDatas[0].Name = "幽门";
         colum3ArtDatas[1].Name = "风池";
         colum3ArtDatas[2].Name = "承灵";
@@ -71,7 +74,7 @@ public class MartialArtModel : AbstractModel
         colum3ArtDatas[8].Name = "百会";
         columAritDic.Add(3,colum3ArtDatas);
         
-        var colum4ArtDatas = new AcupunctureData[8];
+        var colum4ArtDatas = new AcupunctureInfo[8];
         colum4ArtDatas[0].Name = "曲骨";
         colum4ArtDatas[1].Name = "乳根";
         colum4ArtDatas[2].Name = "阴谷";
@@ -82,7 +85,7 @@ public class MartialArtModel : AbstractModel
         colum4ArtDatas[7].Name = "龈交";
         columAritDic.Add(4,colum4ArtDatas);
         
-        var colum5ArtDatas = new AcupunctureData[9];
+        var colum5ArtDatas = new AcupunctureInfo[9];
         colum5ArtDatas[0].Name = "关元";
         colum5ArtDatas[1].Name = "盆缺";
         colum5ArtDatas[2].Name = "晴明";
@@ -94,7 +97,7 @@ public class MartialArtModel : AbstractModel
         colum5ArtDatas[8].Name = "商曲";
         columAritDic.Add(5,colum5ArtDatas);
         
-        var colum6ArtDatas = new AcupunctureData[8];
+        var colum6ArtDatas = new AcupunctureInfo[8];
         colum6ArtDatas[0].Name = "气海";
         colum6ArtDatas[1].Name = "人迎";
         colum6ArtDatas[2].Name = "申脉";
@@ -107,7 +110,7 @@ public class MartialArtModel : AbstractModel
     }
 }
 //穴位数据
-public struct AcupunctureData
+public struct AcupunctureInfo
 {
     public string Name;
 }

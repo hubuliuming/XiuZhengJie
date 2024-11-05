@@ -14,7 +14,8 @@ namespace Game
     {
         protected override void Init()
         {
-           
+            RegisterSystem(new SceneSystem());
+            GameController.Instance.Init();
         }
     }
 }
