@@ -6,14 +6,16 @@
     功能：Nothing
 *****************************************************/
 
-using UnityEngine;
 using QFramework;
 
-public class Game : Architecture<Game>
+namespace Game
 {
-    protected override void Init()
+    public class Game : Architecture<Game>
     {
-        Debug.Log("Init");
-        RegisterModel(new MartialArtModel());
+        protected override void Init()
+        {
+            RegisterSystem(new SceneSystem());
+            GameController.Instance.Init();
+        }
     }
 }
